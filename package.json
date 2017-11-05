@@ -1,0 +1,27 @@
+{
+    "name": "last-stub",
+    "version": "1.0.0",
+    "description": "swagger.yaml first stub server development.",
+    "main": "index.js",
+    "bin": "bin/last-stub",
+    "dependencies": {
+        "escodegen": "^1.9.0",
+        "esprima": "^4.0.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/north-garage/last-stub.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/north-garage/last-stub/issues"
+    },
+    "homepage": "https://github.com/north-garage/last-stub"
+}

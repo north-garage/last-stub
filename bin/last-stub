@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+let last_stub = require('../index');
+
+last_stub(process.cwd(), process.argv[2]);
