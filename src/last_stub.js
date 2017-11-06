@@ -3,7 +3,7 @@ let layout = require('./layout');
 let initializer = require('./initializer');
 let router = require('./router');
 
-module.exports = (opts) => {
+module.exports = (dir, filename) => {
     let body = initializer.prefix;
     // 1. parse swagger.yaml
     // 2. convert to AST
