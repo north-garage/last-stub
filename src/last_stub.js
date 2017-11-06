@@ -2,6 +2,7 @@ let escodegen = require('escodegen');
 let layout = require('./layout');
 let initializer = require('./initializer');
 let router = require('./router');
+let writer = require('./writer');
 
 module.exports = (dir, filename) => {
     let body = initializer.prefix;
@@ -13,7 +14,11 @@ module.exports = (dir, filename) => {
 
     let program = layout.program(body);
     // 3. generate javascript source code from AST
-    let result = escodegen.generate(program);
+    let sourceCode = escodegen.generate(program);
 
-    console.log(result);
+    // 4. output as app.js
+    console.log(sourceCode);
+    let targetDir = dir + '/taget';
+    writer.packageJson(targetDir);
+    writer.appJs(targetDir, sourceCode);
 };

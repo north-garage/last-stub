@@ -1,0 +1,12 @@
+{
+    "name": "last-stub-server",
+    "version": "1.0.0",
+    "scripts": {
+        "prestart": "npm install",
+        "start": "node-dev app.js"
+    },
+    "dependencies": {
+        "express": "^4.16.2",
+        "node-dev": "^3.1.3"
+    }
+}
