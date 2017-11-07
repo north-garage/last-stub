@@ -18,7 +18,7 @@ module.exports = (dir, filename) => {
 
     // 4. output as app.js
     console.log(sourceCode);
-    let targetDir = dir + '/taget';
+    let targetDir = dir + '/target';
     writer.packageJson(targetDir);
     writer.appJs(targetDir, sourceCode);
 };
