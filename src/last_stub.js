@@ -1,22 +1,17 @@
 let escodegen = require('escodegen');
-let layout = require('./layout');
-let initializer = require('./initializer');
-let router = require('./router');
+let reader = require('./reader');
+let ast = require('./ast');
 let writer = require('./writer');
 
 module.exports = (dir, filename) => {
-    let body = initializer.prefix;
     // 1. parse swagger.yaml
+    let source = reader.read(dir + '/' + filename);
     // 2. convert to AST
-    console.log(router.get('/shops', {'hoge': 'fuga'}));
-    body.push(router.get('/shops', {'hoge': 'fuga'}));
-    body.push(initializer.suffix);
-
-    let program = layout.program(body);
+    let program = ast.convert(source);
     // 3. generate javascript source code from AST
     let sourceCode = escodegen.generate(program);
-
     // 4. output as app.js
+    console.log("### Generated source code ###");
     console.log(sourceCode);
     let targetDir = dir + '/target';
     writer.packageJson(targetDir);
